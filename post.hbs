@@ -61,10 +61,26 @@
 
         <section class="comment">
             <div id="post_{{id}}_comments"></div>
-            <script>(function () {var c = document.getElementById('post_{{id}}_comments'),w = c.offsetWidth;c.innerHTML = '<div class="g-comments" data-href="{{@blog.url}}{{url}}" data-width="' + w + '" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD"></div>';})();
-            </script>
-            <script async type="text/javascript" src="//apis.google.com/js/plusone.js?callback=gpcb"></script>
-            <noscript>Please enable JavaScript to view the <a href="https://plus.google.com/">comments powered by Google+.</a></noscript>
+            <!-- START: Livefyre Embed -->
+				<div id="livefyre-comments"></div>
+				<script type="text/javascript" src="http://zor.livefyre.com/wjs/v3.0/javascripts/livefyre.js"></script>
+				<script type="text/javascript">
+				(function () {
+				    var articleId = fyre.conv.load.makeArticleId(null);
+				    fyre.conv.load({}, [{
+				        el: 'livefyre-comments',
+				        network: "livefyre.com",
+				        siteId: "284763",
+				        articleId: articleId,
+				        signed: false,
+				        collectionMeta: {
+				            articleId: articleId,
+				            url: fyre.conv.load.makeCollectionUrl(),
+				        }
+				    }], function() {});
+				}());
+				</script>
+			<!-- END: Livefyre Embed -->
         </section>
 
         {{/post}}

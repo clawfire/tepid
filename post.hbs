@@ -22,7 +22,7 @@
         {{#post}}
 
         {{! Everything below outputs content of the the post which has been published }}
-        <span class="post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time> {{#if tags}}on {{tags separator=" | "}}{{/if}}</span>
+        <span class="post-meta"><i class="icon-thin-021-calendar-date"></i> <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time> <i class="icon-thin-131-tag-sales-price-shop"></i> {{#if tags}}on {{tags separator=" | "}}{{/if}}</span>
 
         <h1 class="post-title">{{{title}}}</h1>
 

@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'picon-thin';
-	src:url('fonts/picon-thin.eot');
-	src:url('fonts/picon-thin.eot?#iefix') format('embedded-opentype'),
-		url('fonts/picon-thin.ttf') format('truetype'),
-		url('fonts/picon-thin.woff') format('woff'),
-		url('fonts/picon-thin.svg#picon-thin') format('svg');
+	src:url('../fonts/picon-thin.eot?msse5y');
+	src:url('../fonts/picon-thin.eot?#iefixmsse5y') format('embedded-opentype'),
+		url('../fonts/picon-thin.ttf?msse5y') format('truetype'),
+		url('../fonts/picon-thin.woff?msse5y') format('woff'),
+		url('../fonts/picon-thin.svg?msse5y#picon-thin') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }

@@ -151,7 +151,7 @@ a {
 }
 
 a:hover {
-    color: rgb(206,114,102);
+    color: #659DBF;
 }
 
 h1 a, h2 a, h3 a,
@@ -183,7 +183,7 @@ blockquote {
     box-sizing: border-box;
     margin: 1.6em 0 1.6em -2.2em;
     padding: 0 0 0 1.6em;
-    border-left: #CE7266 0.4em solid;
+    border-left: #BF3636 0.4em solid;
 }
 
 blockquote p {
@@ -339,7 +339,7 @@ strong {
    ========================================================================== */
 
 /* Big cover image on the home page */
-#site-head {
+.site-head {
     position: relative;
     display: table;
     width: 100%;
@@ -361,7 +361,7 @@ rgba(75,50,50,0.1);
 }
 
 /* Yo-logo. Yolo-go. Upload one in ghost/settings/ */
-#blog-logo img {
+.blog-logo img {
     display: block;
     max-height: 100px;
     width: auto;
@@ -386,7 +386,7 @@ rgba(75,50,50,0.1);
 
 }
 
-#blog-logo img:hover{
+.blog-logo img:hover{
 	opacity: 1;
 	/* Firefox */
 	-moz-transform: scale(1.2) rotate(360deg);
@@ -485,7 +485,7 @@ rgba(75,50,50,0.1);
     margin: 0 0 5px 0;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.5rem;
-    color: rgba(206,114,102,0.7);
+    color: #F2622E;
     text-align: center;
     width:100%;
 }
@@ -666,7 +666,7 @@ rgba(75,50,50,0.1);
     margin: 4rem auto;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.3rem;
-    color: rgb(206,114,102);
+    color: #BF3636;
     text-align: center;
 }
 
@@ -713,17 +713,17 @@ rgba(75,50,50,0.1);
 	position: relative;
 	margin: 8rem 0 0 0;
 	padding: 4rem 0;
-	border-top: #CE7266 1px solid;
+	border-top: #BF3636 1px solid;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 1.3rem;
 	line-height: 1.7em;
-	color: #585448;
+	color: #0C0D0C;
 	text-align: center;
-	background: rgba(239,190,97,0.03);
+	background: #f1f1f1;
 }
 
 .site-footer a {
-	color: #CE7266;
+	color: #BF3636;
 	text-decoration: none;
 }
 
@@ -753,7 +753,7 @@ rgba(75,50,50,0.1);
     top: -14px;
     left: 50%;
     margin-left: -15px;
-    border: #EFBE61 1px solid;
+    border: #BF3636 1px solid;
     text-align: center;
     line-height: 2.4rem;
     border-radius: 50px;
@@ -763,7 +763,7 @@ rgba(75,50,50,0.1);
 
 /* The RSS icon, inserted via icon font */
 .subscribe:before {
-    color: #F4AA69;
+    color: #BF3636;
     font-size: 10px;
     position: absolute;
     top: 2px;
@@ -833,7 +833,7 @@ rgba(75,50,50,0.1);
         margin-left: 0;
     }
 
-    #site-head {
+    .site-head {
         -webkit-box-sizing: border-box; 
         -moz-box-sizing: border-box;
         box-sizing: border-box; 
@@ -910,7 +910,7 @@ rgba(75,50,50,0.1);
         line-height: 1.6em;
     }
 
-    #site-head {
+    .site-head {
         padding: 10% 0;
     }
 

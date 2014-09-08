@@ -22,7 +22,7 @@
         {{#post}}
 
         {{! Everything below outputs content of the the post which has been published }}
-        <span class="post-meta"><i class="picon picon-thin-021_calendar_date"></i><time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time> {{#if tags}}<i class="picon picon-thin-131_tag_sales_price_shop"></i> {{tags separator=" | "}}{{/if}}</span>
+        <span class="post-meta"><i class="picon picon-thin-021_calendar_date"></i> <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time> {{#if tags}}<i class="picon picon-thin-131_tag_sales_price_shop"></i> {{tags separator=" | "}}{{/if}}</span>
 
         <h1 class="post-title">{{{title}}}</h1>
 
@@ -68,7 +68,7 @@
             <script type="text/javascript" src="http://zor.livefyre.com/wjs/v3.0/javascripts/livefyre.js"></script>
             <script type="text/javascript">
             (function () {
-                var articleId = f{{id}} ;
+                var articleId = fyre.conv.load.makeArticleId({{id}});
                 fyre.conv.load({}, [{
                     el: 'livefyre-comments',
                     network: "livefyre.com",
@@ -83,6 +83,7 @@
             }());
             </script>
             <!-- END: Livefyre Embed -->
+                        
             </div>
         </section>
 

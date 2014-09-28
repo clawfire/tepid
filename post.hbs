@@ -106,9 +106,9 @@
                 };
                 var AUID = {{id}}; // DEFAULT - INTEGER
                 // 1. EASY = Use g_ID_ for post new ArticleID migration
-                if( moment({{date published_at format="YYYY-MM-DD"}}).isAfter(migration_new_articleID) ){
+                if( moment('{{date published_at format="YYYY-MM-DD"}}').isAfter(migration_new_articleID) ){
                     AUID = 'g{{id}}'; // STRING
-                } else if( moment({{date published_at format="YYYY-MM-DD"}}).isBefore(migration_wordpress)
+                } else if( moment('{{date published_at format="YYYY-MM-DD"}}').isBefore(migration_wordpress)
                     && wp_to_ghost[{{id}}]!== null) {
                     AUID = wp_to_ghost[{{id}}]; // INTEGER
                 }

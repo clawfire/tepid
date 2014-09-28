@@ -68,10 +68,47 @@
             <script>
                 var migration_wordpress  = moment('2013-12-31');
                 var migration_new_articleID = moment('2014-09-28');
+                var wp_to_ghost = {
+                    '179' : 9,
+                    '185' : 92,
+                    '193' : 163,
+                    '195' : 179,
+                    '196' : 192,
+                    '200' : 743, // WTF ?! [TODO] Check This
+                    '201' : 235,
+                    '204' : 276,
+                    '207' : 325,
+                    '208' : 367,
+                    '212' : 458,
+                    '214' : 483,
+                    '218' : 517,
+                    '219' : 523,
+                    '221' : 544,
+                    '222' : 551,
+                    '223' : 571,
+                    '225' : 573,
+                    '226' : 591,
+                    '233' : 618,
+                    '234' : 625,
+                    '236' : 629,
+                    '237' : 664,
+                    '240' : 683,
+                    '243' : 743,
+                    '244' : 773,
+                    '245' : 782,
+                    '247' : 804,
+                    '248' : 837,
+                    '249' : 865,
+                    '256' : 95
+                };
                 // 1. EASY = Use g_ID_ for post new ArticleID migration
                 if( moment({{date published_at format="YYYY-MM-DD"}}).isAfter(migration_new_articleID) ){
                     var AUID = 'g{{id}}'; // STRING
-                } else {
+                } else if( moment({{date published_at format="YYYY-MM-DD"}}).isBefore(migration_wordpress)
+                    && wp_to_ghost[{{id}}]!== null) {
+                    var AUID = wp_to_ghost[{{id}}]; // INTEGER
+                }
+                else {
                     var AUID = {{id}}; // INTEGER
                 }
             </script>

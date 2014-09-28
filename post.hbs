@@ -65,6 +65,9 @@
             <div id="post_g{{id}}_comments"></div>
             <!-- Decide wich kind of ID to use -->
             <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment-with-locales.min.js"></script>
+            <!-- START: Livefyre Embed -->
+            <div id="livefyre-comments"></div>
+            <script src="http://zor.livefyre.com/wjs/v3.0/javascripts/livefyre.js"></script>
             <script>
                 var migration_wordpress  = moment('2013-12-31');
                 var migration_new_articleID = moment('2014-09-28');
@@ -101,34 +104,27 @@
                     '249' : 865,
                     '256' : 95
                 };
+                var AUID = {{id}}; // DEFAULT - INTEGER
                 // 1. EASY = Use g_ID_ for post new ArticleID migration
                 if( moment({{date published_at format="YYYY-MM-DD"}}).isAfter(migration_new_articleID) ){
-                    var AUID = 'g{{id}}'; // STRING
+                    AUID = 'g{{id}}'; // STRING
                 } else if( moment({{date published_at format="YYYY-MM-DD"}}).isBefore(migration_wordpress)
                     && wp_to_ghost[{{id}}]!== null) {
-                    var AUID = wp_to_ghost[{{id}}]; // INTEGER
+                    AUID = wp_to_ghost[{{id}}]; // INTEGER
                 }
-                else {
-                    var AUID = {{id}}; // INTEGER
-                }
-            </script>
-            <!-- START: Livefyre Embed -->
-            <div id="livefyre-comments"></div>
-            <script src="http://zor.livefyre.com/wjs/v3.0/javascripts/livefyre.js"></script>
-            <script>
-            (function () {
-                fyre.conv.load({}, [{
-                    el: 'livefyre-comments',
-                    network: "livefyre.com",
-                    siteId: "284763",
-                    articleId: AUID,
-                    signed: false,
-                    collectionMeta: {
+                (function () {
+                    fyre.conv.load({}, [{
+                        el: 'livefyre-comments',
+                        network: "livefyre.com",
+                        siteId: "284763",
                         articleId: AUID,
-                        url: {{url absolue="true"}},
-                    }
-                }], function() {});
-            }());
+                        signed: false,
+                        collectionMeta: {
+                            articleId: AUID,
+                            url: {{url absolue="true"}},
+                        }
+                    }], function() {});
+                }());
             </script>
             <!-- END: Livefyre Embed -->
                         

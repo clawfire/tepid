@@ -332,6 +332,9 @@ strong {
     vertical-align: middle;
 }
 /* Inline list */
+ul.inline{
+    padding: 0;
+}
 ul.inline li{
     list-style: none;
     display: inline-block;

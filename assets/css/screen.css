@@ -331,7 +331,11 @@ strong {
     display: table-cell;
     vertical-align: middle;
 }
-
+/* Inline list */
+ul.inline li{
+    list-style: none;
+    display: inline-block;
+}
 
 /* ==========================================================================
    4. General - The main styles for the the theme

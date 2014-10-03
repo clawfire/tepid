@@ -22,7 +22,16 @@
 
     <article class="{{post_class}}">
         <header class="post-header">
-            <span class="post-meta"><i class="picon picon-thin-021_calendar_date"></i> <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> {{#if tags}}<i class="picon picon-thin-131_tag_sales_price_shop"></i> {{tags}}{{/if}}</span>
+            <ul class="inline post-meta">
+                <li>
+                    <i class="picon picon-thin-021_calendar_date"></i> <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time>
+                </li>
+                {{#if tags}}
+                <li>
+                    <i class="picon picon-thin-131_tag_sales_price_shop"></i> {{tags separator=" | "}}
+                </li>
+                {{/if}}
+            </ul>
             <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
 
         </header>
